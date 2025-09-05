@@ -43,9 +43,18 @@ THIRD_PARTY_APPS = [
     "django_celery_beat",
 ]
 
-CORE_APPS = []
+CORE_APPS = [
+    "core_apps.users",
+    "core_apps.profiles",
+    "core_apps.posts",
+    "core_apps.common",
+    "core_apps.ratings",
+    "core_apps.issues",
+]
 
+# Concatenate all apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CORE_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,13 +86,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": getenv("POSTGRES_DB"),
+        "USER": getenv("POSTGRES_USER"),
+        "PASSWORD": getenv("POSTGRES_PASSWORD"),
+        "HOST": getenv("POSTGRES_HOST"),
+        "PORT": getenv("POSTGRES_PORT"),
     }
 }
 
