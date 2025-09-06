@@ -1,0 +1,13 @@
+# Every cache shit humanity can make...
+
+.git/
+*.pyc
+*.pyo
+__pycache__/
+.idea
+.vscode
+venv/
+.venv/
+*.log
+staticfiles/
+.envs/*
