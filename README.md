@@ -6,11 +6,6 @@ The reason for this project is to explore new techologies and build a MVP.
 
 ---
 
-## 📖 Table of Contents
-
-
----
-
 ## ⚙️ Tech Stack
 - Backend: Django
 - Frontend: React
