@@ -1,0 +1,40 @@
+build:
+	docker compose -f local.yml up --build -d --remove-orphans
+
+up:
+	docker compose -f local.yml up -d
+
+down:
+	docker compose -f local.yml down
+
+downv:
+	docker compose -f local.yml down -v
+
+show-logs:
+	docker compose -f local.yml logs -f
+
+show-logs-api:
+	docker compose -f local.yml logs -f api
+
+makemigrations:
+	docker compose -f local.yml run --rm api python manage.py makemigrations
+
+migrate:
+	docker compose -f local.yml run --rm api python manage.py migrate
+
+collectstatic:
+	docker compose -f local.yml run --rm api python manage.py collectstatic --noinput --clear
+
+superuser:
+	docker compose -f local.yml run --rm api python manage.py createsuperuser
+
+db-volume:
+	docker volume inspect api_estate_prod_postgres_data
+
+mailpit-volume:
+	docker volume inspect api_estate_prod_mailpit_data
+
+estate-db:
+	docker compose -f local.yml exec postgres psql --username=joplin --dbname=estate
+
+# I'm using Windows and run powershell with wsl ubuntu to use this Makefile. PS: I hate my life
