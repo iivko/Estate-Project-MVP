@@ -160,3 +160,5 @@ AUTH_USER_MODEL = "users.User"
 
 
 SITE_NAME = getenv("SITE_NAME")
+
+FILE_UPLOAD_PERMISSIONS = None # Stupid workaround for Windows file permissions
