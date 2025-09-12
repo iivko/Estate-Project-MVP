@@ -3,6 +3,8 @@ from os import getenv, path
 
 from dotenv import load_dotenv
 
+import cloudinary
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
@@ -181,6 +183,17 @@ CELERY_TASK_SOFT_TIME_LIMIT = 60
 CELERY_BIT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 CELERY_WORKER_SEND_TASK_EVENTS = True
+
+
+CLOUDINARY_CLOUD_NAME = getenv("CLOUDINARY_CLOUD_NAME")
+CLOUDINARY_API_KEY = getenv("CLOUDINARY_API_KEY")
+CLOUDINARY_SECRET_KEY = getenv("CLOUDINARY_SECRET_KEY")
+
+cloudinary.config(
+    cloud_name=CLOUDINARY_CLOUD_NAME,
+    api_key=CLOUDINARY_API_KEY,
+    api_secret=CLOUDINARY_SECRET_KEY,
+)
 
 
 SITE_NAME = getenv("SITE_NAME")
