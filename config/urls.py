@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.conf import settings
-from django.urls import path
+from django.urls import path, include
 
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
@@ -25,6 +25,10 @@ urlpatterns = [
     path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
 
     path(settings.ADMIN_URL, admin.site.urls),
+
+    # Auth Views
+    path("api/v1/auth/", include("djoser.urls")),
+    path("api/v1/auth/", include("core_apps.users.urls")),
 ]
 
 admin.site.site_header = settings.SITE_NAME + " Admin"
