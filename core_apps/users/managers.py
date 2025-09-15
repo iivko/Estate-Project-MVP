@@ -38,13 +38,13 @@ class UserManager(DjangoUserManager):
 
         return user
 
-    def create_user(self, username: str, email: str | None, password: str | None, **extra_fields):
+    def create_user(self, username: str, email: str | None = None, password: str | None = None, **extra_fields):
         extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
 
         return self._create_user(username, email, password, **extra_fields)
 
-    def create_superuser(self, username: str, email: str | None, password: str | None, **extra_fields):
+    def create_superuser(self, username: str, email: str | None = None, password: str | None = None, **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
 
