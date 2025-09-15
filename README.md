@@ -86,5 +86,27 @@ Logout User
 ```http
 POST http://localhost:8080/api/v1/auth/logout/
 ```
+
+### Google Oauth Login
+
+Google Authorization URL
+```http
+POST http://localhost:8080/api/v1/auth/o/google-oauth2/
+
+params: 
+    redirect_uri: "http://localhost:8080/api/v1/auth/google"
+```
+
+Login With Google
+```http
+POST http://localhost:8080/api/v1/auth/o/google-oauth2/
+
+params: 
+    state: ""
+    code: ""
+
+Headers: 
+    Content-Type: application/x-www-form-urlencoded
+```
 ---
 
