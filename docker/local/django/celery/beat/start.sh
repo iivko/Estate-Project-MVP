@@ -1,7 +1,7 @@
 #! /bin/bash
 
-sed -o errexit
-sed -o nounset
+set -o errexit
+set -o nounset
 
 rm -f './celerybeat.pid'
 

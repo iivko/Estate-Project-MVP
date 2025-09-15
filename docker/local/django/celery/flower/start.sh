@@ -1,7 +1,7 @@
 #! /bin/bash
 
-sed -o errexit
-sed -o nounset
+set -o errexit
+set -o nounset
 
 exec watchfiles --filter python celery.__main__.main \
   --args \
