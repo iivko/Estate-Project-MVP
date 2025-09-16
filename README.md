@@ -108,5 +108,45 @@ params:
 Headers: 
     Content-Type: application/x-www-form-urlencoded
 ```
+
+### Profile Endpoints
+
+My Profile
+```http
+GET http://localhost:8080/api/v1/profiles/user/my-profile/
+```
+
+Update Profile
+```http
+PATCH http://localhost:8080/api/v1/profiles/user/update/
+
+example:
+{
+    "first_name": "",
+    "last_name": "",
+    "username": "",
+    "bio": "",
+    "occupation": "",
+    "phone_number": "+359",
+    "country_of_origin": "Bulgaria",
+    "city_of_origin": "Kazanluk"
+}
+```
+
+Upload Avatar
+```http
+POST http://localhost:8080/api/v1/profiles/user/avatar/
+```
+
+All Profiles
+```http
+GET http://localhost:8080/api/v1/profiles/all/
+```
+
+All Technician Profiles
+```http
+GET http://localhost:8080/api/v1/profiles/non-tenant-profiles/
+```
+
 ---
 

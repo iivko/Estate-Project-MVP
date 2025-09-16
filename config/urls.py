@@ -29,6 +29,9 @@ urlpatterns = [
     # Auth Views
     path("api/v1/auth/", include("djoser.urls")),
     path("api/v1/auth/", include("core_apps.users.urls")),
+
+    # Profiles Views
+    path("api/v1/profiles/", include("core_apps.profiles.urls")),
 ]
 
 admin.site.site_header = settings.SITE_NAME + " Admin"
