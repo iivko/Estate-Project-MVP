@@ -32,6 +32,9 @@ urlpatterns = [
 
     # Profiles Views
     path("api/v1/profiles/", include("core_apps.profiles.urls")),
+
+    # Apartments Views
+    path("api/v1/apartments/", include("core_apps.apartments.urls")),
 ]
 
 admin.site.site_header = settings.SITE_NAME + " Admin"
