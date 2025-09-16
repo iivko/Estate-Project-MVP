@@ -120,7 +120,6 @@ Update Profile
 ```http
 PATCH http://localhost:8080/api/v1/profiles/user/update/
 
-example:
 {
     "first_name": "",
     "last_name": "",
@@ -146,6 +145,24 @@ GET http://localhost:8080/api/v1/profiles/all/
 All Technician Profiles
 ```http
 GET http://localhost:8080/api/v1/profiles/non-tenant-profiles/
+```
+
+### Apartment Endpoints
+
+Add Apartment
+```http
+POST http://localhost:8080/api/v1/apartments/add/
+
+{
+    "unit_number": "",
+    "building": "",
+    "floor": 1
+}
+```
+
+Apartment Details
+```http
+GET http://localhost:8080/api/v1/apartments/my-apartment/
 ```
 
 ---
