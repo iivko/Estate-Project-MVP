@@ -135,7 +135,7 @@ example:
 
 Upload Avatar
 ```http
-POST http://localhost:8080/api/v1/profiles/user/avatar/
+PATCH http://localhost:8080/api/v1/profiles/user/avatar/
 ```
 
 All Profiles
