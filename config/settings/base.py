@@ -55,7 +55,8 @@ CORE_APPS = [
     "core_apps.common",
     "core_apps.ratings",
     "core_apps.issues",
-    "core_apps.apartments"
+    "core_apps.apartments",
+    "core_apps.reports",
 ]
 
 # Concatenate all apps
