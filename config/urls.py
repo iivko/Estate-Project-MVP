@@ -41,6 +41,9 @@ urlpatterns = [
 
     # Reports Views
     path("api/v1/reports/", include("core_apps.reports.urls")),
+
+    # Ratings Views
+    path("api/v1/ratings/", include("core_apps.ratings.urls")),
 ]
 
 admin.site.site_header = settings.SITE_NAME + " Admin"
