@@ -12,9 +12,10 @@ class GenericJSONRenderer(JSONRenderer):
     object_label = "object"
 
     def render(
-        self, data: Any,
-        accepted_media_type: Optional[str] = None,
-        renderer_context: Optional[dict] = None
+            self,
+            data: Any,
+            accepted_media_type: Optional[str] = None,
+            renderer_context: Optional[dict] = None
     ) -> Union[bytes, str]:
 
         if renderer_context is None:

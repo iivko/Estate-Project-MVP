@@ -44,6 +44,9 @@ urlpatterns = [
 
     # Ratings Views
     path("api/v1/ratings/", include("core_apps.ratings.urls")),
+
+    # Posts views
+    path("api/v1/posts/", include("core_apps.posts.urls"))
 ]
 
 admin.site.site_header = settings.SITE_NAME + " Admin"
