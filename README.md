@@ -165,5 +165,175 @@ Apartment Details
 GET http://localhost:8080/api/v1/apartments/my-apartment/
 ```
 
+### Issue Endpoints
+
+Create Issue
+```http
+POST http://localhost:8080/api/v1/issues/create/<uuid:apartment_id>/
+
+{
+    "title": "",
+    "description": "",
+    "status": "",
+    "priority": ""
+}
+```
+
+Issue Details
+```http
+GET http://localhost:8080/api/v1/issues/<uuid:issue_id>/
+```
+
+Update Issue
+```http
+PATCH http://localhost:8080/api/v1/issues/<uuid:issue_id>/
+
+{
+    "title": "",
+    "description": "",
+    "status": "",
+    "priority": ""
+}
+```
+
+Delete Issue
+```http
+DELETE http://localhost:8080/api/v1/issues/<uuid:issue_id>/
+```
+
+All Reported Issues
+```http
+GET http://localhost:8080/api/v1/issues/
+```
+
+My Issues
+```http
+GET http://localhost:8080/api/v1/issues/me/
+```
+
+### Report Endpoints
+
+Create Report
+```http
+POST http://localhost:8080/api/v1/reports/create/
+
+{
+    "title": "",
+    "description": "",
+    "reported_user_username": ""
+}
+```
+
+My Reports
+```http
+GET http://localhost:8080/api/v1/reports/me/
+```
+
+### Rating Endpoints
+
+Add User Rating
+```http
+POST http://localhost:8080/api/v1/ratings/create/
+
+{
+    "rated_user_username": "",
+    "rating": 3,
+    "comment": ""
+}
+```
+
+### Post Endpoints
+
+Create Post
+```http
+POST http://localhost:8080/api/v1/posts/create/
+
+{
+    "title": "",
+    "tags": ["One", "Two", "Three"],
+    "body": ""
+}
+```
+
+My Posts
+```http
+GET http://localhost:8080/api/v1/posts/my-posts/
+```
+
+Update Post
+```http
+PATCH http://localhost:8080/api/v1/posts/<slug:slug>/update/
+
+{
+    "title": "",
+    "tags": ["One", "Three"],
+    "body": ""
+}
+```
+
+Get All Posts
+```http
+GET http://localhost:8080/api/v1/posts/
+```
+
+Get Single Post
+```http
+GET http://localhost:8080/api/v1/posts/<slug:slug>/
+```
+
+Upvote Post
+```http
+POST http://localhost:8080/api/v1/posts/<uuid:post_id>/upvote/
+```
+
+Downvote Post
+```http
+POST http://localhost:8080/api/v1/posts/<uuid:post_id>/downvote/
+```
+
+Bookmark Post
+```http
+POST http://localhost:8080/api/v1/posts/<slug:slug>/bookmark/
+```
+
+Un Bookmark Post
+```http
+POST http://localhost:8080/api/v1/posts/<slug:slug>/unbookmark/
+```
+
+All Bookmarked Posts
+```http
+GET http://localhost:8080/api/v1/posts/bookmarked/
+```
+
+Add Reply To Post
+```http
+POST http://localhost:8080/api/v1/posts/<uuid:post_id>/reply/
+
+{
+    "body": ""
+}
+```
+
+All Replies Of A Post
+```http
+GET http://localhost:8080/api/v1/posts/<uuid:post_id>/replies/
+```
+
+Get Popular Tags
+```http
+GET http://localhost:8080/api/v1/posts/popular-tags/
+```
+
+Get Top Posts
+```http
+GET http://localhost:8080/api/v1/posts/top-posts/
+```
+
+Get Posts By Tag
+```http
+GET http://localhost:8080/api/v1/posts/tags/<str:tag_slug>/
+```
+
 ---
 
